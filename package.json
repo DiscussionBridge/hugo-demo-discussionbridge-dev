@@ -1,0 +1,13 @@
+{
+  "name": "discussionbridge-hugo-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "hugo --cleanDestinationDir --destination public",
+    "deploy:dry-run": "wrangler deploy --dry-run --config wrangler.jsonc",
+    "deploy": "wrangler deploy --config wrangler.jsonc --strict"
+  },
+  "devDependencies": {
+    "wrangler": "4.123.0"
+  }
+}

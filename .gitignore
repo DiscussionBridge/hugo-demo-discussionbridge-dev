@@ -1,0 +1,5 @@
+public/
+resources/
+node_modules/
+.wrangler/
+.hugo_build.lock

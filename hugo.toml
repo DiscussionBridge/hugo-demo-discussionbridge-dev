@@ -1,0 +1,31 @@
+baseURL = 'https://hugo.demo.discussionbridge.dev/'
+locale = 'en-US'
+title = 'DiscussionBridge Hugo Demo'
+enableRobotsTXT = true
+
+[module]
+  [[module.imports]]
+    path = 'github.com/gohugo-ananke/ananke/v2'
+
+[params]
+  description = 'A stock Hugo site connected to The Bridge.'
+  site_logo = ''
+  recent_posts_number = 8
+
+[params.ananke]
+  custom_css = ['discussionbridge.css']
+
+[[menus.main]]
+  name = 'Hugo demos'
+  pageRef = '/discussionbridge'
+  weight = 10
+
+[[menus.main]]
+  name = 'All demos'
+  url = 'https://demo.discussionbridge.dev/'
+  weight = 20
+
+[[menus.main]]
+  name = 'The Bridge'
+  url = 'https://bridge.demo.discussionbridge.dev/'
+  weight = 30

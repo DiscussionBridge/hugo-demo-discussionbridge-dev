@@ -1,0 +1,17 @@
+{{- $mode := .Get "mode" -}}
+{{- $record := index site.Data.discussionbridge .Page.File.ContentBaseName -}}
+<section class="discussionbridge-presentation" data-discussionbridge-mode="{{ $mode }}">
+  {{ if $record }}
+    {{ if eq $mode "simple" }}
+      <div class="discussionbridge-simple">{{ $record.simple_html | safeHTML }}</div>
+    {{ else if eq $mode "from_discourse" }}
+      <article class="discussionbridge-from">{{ $record.content_html | safeHTML }}</article>
+      {{ $record.comments_html | safeHTML }}
+    {{ else }}
+      {{ $record.comments_html | safeHTML }}
+    {{ end }}
+  {{ else }}
+    <p class="discussionbridge-preparing">This live discussion is being prepared.</p>
+  {{ end }}
+  {{ partial "discussionbridge-credit.html" . }}
+</section>

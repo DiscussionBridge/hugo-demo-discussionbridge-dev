@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "hugo-demo-discussionbridge-dev",
+  "account_id": "b951a1f598b7d38f3c054ffdb5b97030",
+  "compatibility_date": "2026-06-30",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "hugo.demo.discussionbridge.dev",
+      "custom_domain": true
+    }
+  ],
+  "observability": { "enabled": true }
+}
