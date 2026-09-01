@@ -5,3 +5,7 @@ await copyFile(
   new URL("../node_modules/hugo-discussion-bridge/dist/discussionbridge-simple.js", import.meta.url),
   new URL("../static/discussionbridge/simple.js", import.meta.url),
 );
+await copyFile(
+  new URL("../node_modules/hugo-discussion-bridge/dist/discussionbridge-rich-content.js", import.meta.url),
+  new URL("../static/discussionbridge/rich-content.js", import.meta.url),
+);
