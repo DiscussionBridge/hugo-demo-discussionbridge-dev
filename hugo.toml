@@ -39,6 +39,11 @@ enableRobotsTXT = true
   weight = 20
 
 [[menus.main]]
+  name = 'Publisher matrix'
+  url = 'https://demo.discussionbridge.dev/discourse/'
+  weight = 30
+
+[[menus.main]]
   name = 'The Bridge'
   url = 'https://bridge.demo.discussionbridge.dev/'
-  weight = 30
+  weight = 40

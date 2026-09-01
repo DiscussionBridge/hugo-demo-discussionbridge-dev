@@ -28,7 +28,11 @@
     <div class="discussionbridge-header"><h2>Discussion</h2></div>
     <div id="discourse-comments"></div>
     <script>
-      window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" $forum }}, discourseEmbedUrl: {{ .Page.Permalink }} };
+      {{ with $record }}
+        window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" .forum_origin }}, topicId: {{ .topic_id }} };
+      {{ else }}
+        window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" $forum }}, discourseEmbedUrl: {{ .Page.Permalink }} };
+      {{ end }}
       (() => { const script = document.createElement("script"); script.async = true; script.src = {{ printf "%s/javascripts/embed.js" $forum }}; document.body.appendChild(script); })();
     </script>
   {{ else }}
