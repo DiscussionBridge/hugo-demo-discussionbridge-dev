@@ -4,15 +4,16 @@
   "private": true,
   "scripts": {
     "sync:adapter-assets": "node scripts/sync-adapter-assets.mjs",
+    "sync:publications": "discussionbridge-hugo sync-publications --content-dir content --site-url https://hugo.demo.discussionbridge.dev/",
     "build:manifest": "npm run sync:adapter-assets && hugo --cleanDestinationDir --destination public",
     "prepare:data": "discussionbridge-hugo prepare --manifest public/discussionbridge-manifest.json --output data/discussionbridge.json",
-    "build": "npm run build:manifest && npm run prepare:data && hugo --cleanDestinationDir --destination public",
+    "build": "npm run sync:publications && npm run build:manifest && npm run prepare:data && hugo --cleanDestinationDir --destination public",
     "build:preview": "hugo --cleanDestinationDir --destination public",
     "deploy:dry-run": "wrangler deploy --dry-run --config wrangler.jsonc",
     "deploy": "wrangler deploy --config wrangler.jsonc --strict"
   },
   "dependencies": {
-    "hugo-discussion-bridge": "file:packages/hugo-discussion-bridge-0.1.0-alpha.4.tgz"
+    "hugo-discussion-bridge": "file:packages/hugo-discussion-bridge-0.1.0-alpha.5.tgz"
   },
   "devDependencies": {
     "wrangler": "4.123.0"
