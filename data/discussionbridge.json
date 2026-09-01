@@ -30,6 +30,11 @@
     "topic_url": "https://bridge.demo.discussionbridge.dev/t/one-discussion-seven-full-presentations/56",
     "forum_origin": "https://bridge.demo.discussionbridge.dev"
   },
+  "mixed-static-full": {
+    "topic_id": 54,
+    "topic_url": "https://bridge.demo.discussionbridge.dev/t/one-discussion-seven-simple-presentations/54",
+    "forum_origin": "https://bridge.demo.discussionbridge.dev"
+  },
   "the-bridge-publishes-everywhere": {
     "resource_id": "fe24c7c4-3e2c-4b9a-a6ab-fb2cb12b4a6b",
     "topic_id": 53,
