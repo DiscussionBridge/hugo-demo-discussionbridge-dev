@@ -13,7 +13,7 @@
     "deploy": "wrangler deploy --config wrangler.jsonc --strict"
   },
   "dependencies": {
-    "hugo-discussion-bridge": "file:packages/hugo-discussion-bridge-0.1.0-alpha.8.tgz"
+    "hugo-discussion-bridge": "file:packages/hugo-discussion-bridge-0.1.0-alpha.9.tgz"
   },
   "devDependencies": {
     "wrangler": "4.123.0"

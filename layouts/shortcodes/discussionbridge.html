@@ -33,7 +33,15 @@
     </script>
   {{ else }}
     {{ with $record }}
-      {{ if eq $mode "from_discourse" }}<article class="discussionbridge-from">{{ .content_html | safeHTML }}</article>{{ end }}
+      {{ if eq $mode "from_discourse" }}
+        <article class="discussionbridge-from">{{ .content_html | safeHTML }}</article>
+        <aside class="discussionbridge-publication">
+          <p>Published from <a href="{{ .topic_url }}">The Bridge</a>.</p>
+          {{ with $.Page.Params.discussionbridge_source_author }}
+            <p>Source author: {{ . }}{{ with $.Page.Params.discussionbridge_source_revision }} · Revision {{ . }}{{ end }}{{ with $.Page.Params.discussionbridge_adapter_version }} · Hugo 0.165.0 · DiscussionBridge for Hugo {{ . }}{{ end }}</p>
+          {{ end }}
+        </aside>
+      {{ end }}
       <div class="discussionbridge-header"><h2>Discussion</h2><a href="{{ .topic_url }}">Open discussion</a></div>
       <div id="discourse-comments"></div>
       <script>
