@@ -12,5 +12,11 @@
     "topic_id": 50,
     "topic_url": "https://bridge.demo.discussionbridge.dev/t/hugo-publishing-through-the-bridge/50",
     "forum_origin": "https://bridge.demo.discussionbridge.dev"
+  },
+  "simple-comments": {
+    "topic_id": 52,
+    "topic_url": "https://bridge.demo.discussionbridge.dev/t/hugo-plugin-free-simple-comments-discussionbridge-hugo-demo/52",
+    "forum_origin": "https://bridge.demo.discussionbridge.dev",
+    "simple_html": "<div class=\"discussionbridge-simple__header\"><h2>Comments</h2><a href=\"https://bridge.demo.discussionbridge.dev/t/hugo-plugin-free-simple-comments-discussionbridge-hugo-demo/52\" rel=\"nofollow noopener noreferrer\">Open discussion</a></div><p class=\"discussionbridge-simple__empty\">No replies yet.</p>"
   }
 }
