@@ -2,6 +2,7 @@
 title: 'Hugo plugin-free Full comments'
 date: 2026-08-30T20:31:00-07:00
 description: 'Discourse Core comments embedded beneath a generated Hugo article.'
+summary: 'A generated Hugo article with the plugin-free Discourse Core comments frame.'
 discussionbridge_mode: 'full'
 ---
 

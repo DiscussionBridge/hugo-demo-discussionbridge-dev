@@ -2,6 +2,7 @@
 title: 'Hugo publishing through The Bridge'
 date: 2026-08-30T20:32:00-07:00
 description: 'A generated Hugo article resolved into one durable Bridge Record.'
+summary: 'A generated Hugo article resolved into one durable Bridge Record and discussion.'
 discussionbridge_mode: 'to_discourse'
 discussionbridge_publish: true
 authors:

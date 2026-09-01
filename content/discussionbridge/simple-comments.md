@@ -2,6 +2,7 @@
 title: 'Hugo plugin-free Simple comments'
 date: 2026-08-30T20:30:00-07:00
 description: 'Lightweight comments captured into generated Hugo HTML.'
+summary: 'Lightweight public replies captured as native generated Hugo HTML.'
 discussionbridge_mode: 'simple'
 discussionbridge_topic_id: 52
 ---
