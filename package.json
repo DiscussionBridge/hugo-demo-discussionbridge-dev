@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "hugo --cleanDestinationDir --destination public",
+    "build:manifest": "hugo --cleanDestinationDir --destination public",
+    "prepare": "discussionbridge-hugo prepare --manifest public/discussionbridge-manifest.json --output data/discussionbridge.json",
+    "build": "npm run build:manifest && npm run prepare && hugo --cleanDestinationDir --destination public",
+    "build:preview": "hugo --cleanDestinationDir --destination public",
     "deploy:dry-run": "wrangler deploy --dry-run --config wrangler.jsonc",
     "deploy": "wrangler deploy --config wrangler.jsonc --strict"
+  },
+  "dependencies": {
+    "hugo-discussion-bridge": "file:packages/hugo-discussion-bridge-0.1.0-alpha.3.tgz"
   },
   "devDependencies": {
     "wrangler": "4.123.0"

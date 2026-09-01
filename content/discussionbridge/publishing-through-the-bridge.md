@@ -1,9 +1,13 @@
 ---
 title: 'Hugo publishing through The Bridge'
-date: 2026-09-01T00:02:00-07:00
+date: 2026-08-30T20:32:00-07:00
 description: 'A generated Hugo article resolved into one durable Bridge Record.'
 discussionbridge_mode: 'to_discourse'
 discussionbridge_publish: true
+authors:
+  - id: hugo-demo-editor
+    name: Hugo Demo Editor
+discussionbridge_primary_author_id: hugo-demo-editor
 ---
 
 This article begins in Hugo. During the trusted build, the Hugo adapter sends

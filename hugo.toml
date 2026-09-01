@@ -9,11 +9,24 @@ enableRobotsTXT = true
 
 [params]
   description = 'A stock Hugo site connected to The Bridge.'
+  discussionbridge_forum_origin = 'https://bridge.demo.discussionbridge.dev'
   site_logo = ''
   recent_posts_number = 8
 
 [params.ananke]
   custom_css = ['discussionbridge.css']
+
+[mediaTypes.'application/vnd.discussionbridge+json']
+  suffixes = ['json']
+
+[outputFormats.discussionbridge]
+  mediaType = 'application/vnd.discussionbridge+json'
+  baseName = 'discussionbridge-manifest'
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ['html', 'rss', 'discussionbridge']
 
 [[menus.main]]
   name = 'Hugo demos'

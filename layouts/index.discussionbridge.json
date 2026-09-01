@@ -1,0 +1,27 @@
+{{- $pages := slice -}}
+{{- range site.RegularPages -}}
+{{- $current := . -}}
+{{- with $current.Params.discussionbridge_mode -}}
+  {{- $page := dict
+    "key" $current.File.ContentBaseName
+    "mode" .
+    "canonical_url" $current.Permalink
+    "title" $current.Title
+    "content_html" $current.Content
+  -}}
+  {{- with $current.Params.discussionbridge_resource_id -}}
+    {{- $page = merge $page (dict "resource_id" .) -}}
+  {{- end -}}
+  {{- with $current.Params.discussionbridge_topic_id -}}
+    {{- $page = merge $page (dict "topic_id" .) -}}
+  {{- end -}}
+  {{- with $current.Params.authors -}}
+    {{- $page = merge $page (dict "source_authors" .) -}}
+  {{- end -}}
+  {{- with $current.Params.discussionbridge_primary_author_id -}}
+    {{- $page = merge $page (dict "primary_source_author_id" .) -}}
+  {{- end -}}
+  {{- $pages = $pages | append $page -}}
+{{- end -}}
+{{- end -}}
+{{- dict "site_origin" site.BaseURL "pages" $pages | jsonify -}}

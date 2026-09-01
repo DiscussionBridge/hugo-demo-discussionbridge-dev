@@ -1,17 +1,38 @@
 {{- $mode := .Get "mode" -}}
-{{- $record := index site.Data.discussionbridge .Page.File.ContentBaseName -}}
+{{- $key := .Page.File.ContentBaseName -}}
+{{- $record := index hugo.Data.discussionbridge $key -}}
+{{- $forum := strings.TrimSuffix "/" site.Params.discussionbridge_forum_origin -}}
 <section class="discussionbridge-presentation" data-discussionbridge-mode="{{ $mode }}">
-  {{ if $record }}
-    {{ if eq $mode "simple" }}
-      <div class="discussionbridge-simple">{{ $record.simple_html | safeHTML }}</div>
-    {{ else if eq $mode "from_discourse" }}
-      <article class="discussionbridge-from">{{ $record.content_html | safeHTML }}</article>
-      {{ $record.comments_html | safeHTML }}
+  {{ if eq $mode "simple" }}
+    {{ with $record }}
+      <div class="discussionbridge-simple">{{ .simple_html | safeHTML }}</div>
     {{ else }}
-      {{ $record.comments_html | safeHTML }}
+      <div class="discussionbridge-header"><h2>Comments</h2></div>
+      <div id="discourse-comments"></div>
+      <script>
+        window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" $forum }}, discourseEmbedUrl: {{ .Page.Permalink }} };
+        (() => { const script = document.createElement("script"); script.async = true; script.src = {{ printf "%s/javascripts/embed.js" $forum }}; document.body.appendChild(script); })();
+      </script>
     {{ end }}
+  {{ else if eq $mode "full" }}
+    <div class="discussionbridge-header"><h2>Discussion</h2></div>
+    <div id="discourse-comments"></div>
+    <script>
+      window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" $forum }}, discourseEmbedUrl: {{ .Page.Permalink }} };
+      (() => { const script = document.createElement("script"); script.async = true; script.src = {{ printf "%s/javascripts/embed.js" $forum }}; document.body.appendChild(script); })();
+    </script>
   {{ else }}
-    <p class="discussionbridge-preparing">This live discussion is being prepared.</p>
+    {{ with $record }}
+      {{ if eq $mode "from_discourse" }}<article class="discussionbridge-from">{{ .content_html | safeHTML }}</article>{{ end }}
+      <div class="discussionbridge-header"><h2>Discussion</h2><a href="{{ .topic_url }}">Open discussion</a></div>
+      <div id="discourse-comments"></div>
+      <script>
+        window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" .forum_origin }}, topicId: {{ .topic_id }}, fullApp: true, dynamicHeight: true, embedMinHeight: "360" };
+        (() => { const script = document.createElement("script"); script.async = true; script.src = {{ printf "%s/javascripts/embed.js" .forum_origin }}; document.body.appendChild(script); })();
+      </script>
+    {{ else }}
+      <p class="discussionbridge-preparing">This Bridge Record is being prepared.</p>
+    {{ end }}
   {{ end }}
   {{ partial "discussionbridge-credit.html" . }}
 </section>
