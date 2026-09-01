@@ -5,7 +5,17 @@
 <section class="discussionbridge-presentation" data-discussionbridge-mode="{{ $mode }}">
   {{ if eq $mode "simple" }}
     {{ with $record }}
-      <div class="discussionbridge-simple">{{ .simple_html | safeHTML }}</div>
+      <div
+        class="discussionbridge-simple"
+        data-discussionbridge-simple-live
+        data-discourse-origin="{{ .forum_origin }}"
+        data-topic-id="{{ .topic_id }}"
+        data-topic-url="{{ .topic_url }}"
+      >
+        {{ .simple_html | safeHTML }}
+        <p data-discussionbridge-simple-status hidden>Live comments are temporarily unavailable; showing the most recently published snapshot.</p>
+      </div>
+      <script src="/discussionbridge/simple.js" defer></script>
     {{ else }}
       <div class="discussionbridge-header"><h2>Comments</h2></div>
       <div id="discourse-comments"></div>
