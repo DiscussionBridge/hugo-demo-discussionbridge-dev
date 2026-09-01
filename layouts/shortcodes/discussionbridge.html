@@ -37,7 +37,7 @@
       <div class="discussionbridge-header"><h2>Discussion</h2><a href="{{ .topic_url }}">Open discussion</a></div>
       <div id="discourse-comments"></div>
       <script>
-        window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" .forum_origin }}, topicId: {{ .topic_id }}, fullApp: true, dynamicHeight: true, embedMinHeight: "360" };
+        window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" .forum_origin }}, topicId: {{ .topic_id }}, fullApp: true, embedHeight: "800px", dynamicHeight: false, embedMinHeight: "360" };
         (() => { const script = document.createElement("script"); script.async = true; script.src = {{ printf "%s/javascripts/embed.js" .forum_origin }}; document.body.appendChild(script); })();
       </script>
     {{ else }}
