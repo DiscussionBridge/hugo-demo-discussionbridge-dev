@@ -31,7 +31,11 @@
       {{ with $record }}
         window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" .forum_origin }}, topicId: {{ .topic_id }} };
       {{ else }}
-        window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" $forum }}, discourseEmbedUrl: {{ .Page.Permalink }} };
+        {{ with $.Page.Params.discussionbridge_topic_id }}
+          window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" $forum }}, topicId: {{ . }} };
+        {{ else }}
+          window.DiscourseEmbed = { discourseUrl: {{ printf "%s/" $forum }}, discourseEmbedUrl: {{ $.Page.Permalink }} };
+        {{ end }}
       {{ end }}
       (() => { const script = document.createElement("script"); script.async = true; script.src = {{ printf "%s/javascripts/embed.js" $forum }}; document.body.appendChild(script); })();
     </script>
