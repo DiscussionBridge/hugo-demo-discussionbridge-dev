@@ -16,6 +16,44 @@ enableRobotsTXT = true
 [params.ananke]
   custom_css = ['discussionbridge.css']
 
+[params.ananke.social.follow]
+  networks = ['discourse', 'bluesky', 'discord', 'mastodon', 'reddit', 'x-twitter', 'youtube']
+
+[params.ananke.social.networks.discourse]
+  slug = 'discourse'
+  label = 'DiscussionBridge forum'
+  color = '#0b5360'
+  profile = ''
+  icon = 'discourse'
+
+[params.ananke.social.networks.discord]
+  slug = 'discord'
+  label = 'Discord'
+  color = '#5865f2'
+  profile = ''
+  icon = 'discord'
+
+[params.ananke.social.discourse]
+  profilelink = 'https://forum.discussionbridge.dev/'
+
+[params.ananke.social.bluesky]
+  username = 'discussionbridge.bsky.social'
+
+[params.ananke.social.discord]
+  profilelink = 'https://discord.gg/Y7SRQAxKq'
+
+[params.ananke.social.mastodon]
+  profilelink = 'https://mastodon.social/@DiscussionBridge'
+
+[params.ananke.social.reddit]
+  profilelink = 'https://www.reddit.com/r/DiscussionBridge/'
+
+[params.ananke.social.x-twitter]
+  profilelink = '#'
+
+[params.ananke.social.youtube]
+  username = 'DiscussionBridge'
+
 [mediaTypes.'application/vnd.discussionbridge+json']
   suffixes = ['json']
 
