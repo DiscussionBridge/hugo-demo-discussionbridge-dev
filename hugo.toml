@@ -17,7 +17,7 @@ enableRobotsTXT = true
   custom_css = ['discussionbridge.css']
 
 [params.ananke.social.follow]
-  networks = ['discourse', 'bluesky', 'discord', 'mastodon', 'reddit', 'x-twitter', 'youtube']
+  networks = ['discourse', 'github', 'bluesky', 'discord', 'mastodon', 'reddit', 'x-twitter', 'youtube']
 
 [params.ananke.social.networks.discourse]
   slug = 'discourse'
@@ -36,6 +36,9 @@ enableRobotsTXT = true
 [params.ananke.social.discourse]
   profilelink = 'https://forum.discussionbridge.dev/'
 
+[params.ananke.social.github]
+  username = 'DiscussionBridge'
+
 [params.ananke.social.bluesky]
   username = 'discussionbridge.bsky.social'
 
@@ -49,7 +52,7 @@ enableRobotsTXT = true
   profilelink = 'https://www.reddit.com/r/DiscussionBridge/'
 
 [params.ananke.social.x-twitter]
-  profilelink = '#'
+  profilelink = 'https://x.com/DiscussBridge'
 
 [params.ananke.social.youtube]
   username = 'DiscussionBridge'
