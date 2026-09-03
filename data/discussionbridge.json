@@ -8,6 +8,7 @@
     "content_html": "<div> </div>\n<p>This article begins on <strong>The Bridge</strong> and is retrieved during a trusted Hugo build.<br />\nHugo publishes bounded, sanitized static HTML while the source topic, replies,<br />\nmoderation and identity remain here.</p>\n<h2><a href=\"#p-126-static-does-not-mean-disconnected-1\"></a>Static does not mean disconnected</h2>\n<p>DiscussionBridge keeps the generated page free of receiver credentials and live<br />\napplication state. A later build can refresh the forum-owned article and its<br />\ndiscussion without transferring ownership to Hugo.</p>\n<h2><a href=\"#p-126-one-source-of-truth-2\"></a>One source of truth</h2>\n<p>The Bridge remains authoritative for this article and conversation. Hugo owns<br />\nthe generated presentation. Readers can reply through the embedded discussion<br />\nor open this topic directly.</p>\n<h2><a href=\"#p-126-a-portable-publishing-profile-3\"></a>A portable publishing profile</h2>\n<p>The same contract supports Hugo locally, in CI, or on a static deployment host.<br />\nOnly the trusted build process receives the connection credential.</p>"
   },
   "publishing-through-the-bridge": {
+    "outcome": "resolved",
     "resource_id": "ab433011-9ccd-401c-bb13-8ed74f01db2c",
     "topic_id": 50,
     "topic_url": "https://bridge.demo.discussionbridge.dev/t/hugo-publishing-through-the-bridge/50",

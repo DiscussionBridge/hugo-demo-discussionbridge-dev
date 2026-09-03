@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "adapterId": "hugo-discussion-bridge",
+  "operations": {
+    "hugo-page:c5f51c488f1223a043baa7176b1decb09b378ac742a3ae8fa21a8a02e1fa45ca": {
+      "externalId": "hugo-page:c5f51c488f1223a043baa7176b1decb09b378ac742a3ae8fa21a8a02e1fa45ca",
+      "canonicalUrl": "https://hugo.demo.discussionbridge.dev/discussionbridge/publishing-through-the-bridge/",
+      "correlationId": "0705c5ce-0593-4469-b421-fc87902c728a",
+      "attempts": 2,
+      "outcome": "resolved",
+      "retryable": false,
+      "reconciliationRequired": false,
+      "lastAttemptAt": "2026-09-03T06:09:44.951Z",
+      "resourceId": "ab433011-9ccd-401c-bb13-8ed74f01db2c",
+      "topicId": 50,
+      "topicUrl": "https://bridge.demo.discussionbridge.dev/t/hugo-publishing-through-the-bridge/50",
+      "lastSuccessAt": "2026-09-03T06:09:45.127Z"
+    }
+  }
+}
