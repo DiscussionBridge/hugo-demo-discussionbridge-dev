@@ -1,4 +1,5 @@
-{{- $mode := .Get "mode" -}}
+{{- $requestedMode := .Get "mode" -}}
+{{- $mode := cond (eq $requestedMode "fullInteractive") "interactive" $requestedMode -}}
 {{- $key := .Page.File.ContentBaseName -}}
 {{- $record := index hugo.Data.discussionbridge $key -}}
 {{- $forum := strings.TrimSuffix "/" site.Params.discussionbridge_forum_origin -}}
@@ -39,7 +40,7 @@
       {{ end }}
       (() => { const script = document.createElement("script"); script.async = true; script.src = {{ printf "%s/javascripts/embed.js" $forum }}; document.body.appendChild(script); })();
     </script>
-  {{ else }}
+  {{ else if or (eq $mode "interactive") (eq $mode "from_discourse") }}
     {{ with $record }}
       {{ if eq $mode "from_discourse" }}
         <article class="discussionbridge-from">{{ .content_html | safeHTML }}</article>
@@ -59,6 +60,8 @@
     {{ else }}
       <p class="discussionbridge-preparing">This Bridge Record is being prepared.</p>
     {{ end }}
+  {{ else }}
+    {{- errorf "DiscussionBridge mode %q is unsupported" $requestedMode -}}
   {{ end }}
   {{ partial "discussionbridge-credit.html" . }}
 </section>

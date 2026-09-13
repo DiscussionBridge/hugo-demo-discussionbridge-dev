@@ -13,6 +13,6 @@ presentation.
 ## A portable baseline
 
 Full mode works without The Bridge receiver contract. It is the natural step
-between a link-only discussion and receiver-backed fullInteractive behavior.
+between a link-only discussion and receiver-backed Interactive behavior.
 
 {{< discussionbridge mode="full" >}}

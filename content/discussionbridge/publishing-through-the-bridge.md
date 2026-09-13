@@ -20,4 +20,4 @@ HTML to The Bridge.
 An exact rebuild or retry resolves the same Bridge Record and topic. A changed
 canonical identity fails closed rather than silently creating a replacement.
 
-{{< discussionbridge mode="fullInteractive" >}}
+{{< discussionbridge mode="interactive" >}}
