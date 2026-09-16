@@ -69,6 +69,11 @@ enableRobotsTXT = true
 [outputs]
   home = ['html', 'rss', 'discussionbridge']
 
+[segments.discussionbridge-manifest]
+  [[segments.discussionbridge-manifest.includes]]
+    kind = 'home'
+    output = 'discussionbridge'
+
 [[menus.main]]
   name = 'Hugo demos'
   pageRef = '/discussionbridge'
