@@ -10,6 +10,7 @@ enableRobotsTXT = true
 [params]
   description = 'A stock Hugo site connected to The Bridge.'
   discussionbridge_forum_origin = 'https://bridge.demo.discussionbridge.dev'
+  images = ['https://discussionbridge.dev/media/discussionbridge-open-graph.png']
   site_logo = ''
   recent_posts_number = 8
 

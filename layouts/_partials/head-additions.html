@@ -1,0 +1,11 @@
+{{- if hugo.IsProduction }}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9SYR7QENF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K9SYR7QENF');
+  </script>
+{{- end }}
+{{- partials.Include "hook.html" (dict "hook" "head-end" "context" .) -}}

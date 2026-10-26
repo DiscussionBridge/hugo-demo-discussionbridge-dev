@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "node --test test/*.test.mjs",
     "sync:adapter-assets": "node scripts/sync-adapter-assets.mjs",
     "sync:publications": "discussionbridge-hugo sync-publications --content-dir content --site-url https://hugo.demo.discussionbridge.dev/",
     "build:manifest": "npm run sync:adapter-assets && hugo --cleanDestinationDir --destination public --renderSegments discussionbridge-manifest",
